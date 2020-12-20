@@ -121,7 +121,6 @@ NOTE: You must be signed in to submit a report, and to include images you must s
       ddog.increment(`support-invalid`)
       return;
     }
-    console.log(option)
     ddog.increment(`support-${msg.content}`)
   
     if (option.custom) {
