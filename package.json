@@ -1,0 +1,23 @@
+{
+  "name": "support",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/melmsie/support.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/melmsie/support/issues"
+  },
+  "homepage": "https://github.com/melmsie/support#readme",
+  "dependencies": {
+    "eris": "^0.14.0",
+    "node-dogstatsd": "^0.0.7"
+  }
+}

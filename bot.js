@@ -1,6 +1,8 @@
 const Eris = require("eris");
 const config = require("./config.json")
 var bot = new Eris(config.token);
+const { StatsD } = require('node-dogstatsd');
+const ddog= new StatsD();
 
 
 const options = {
@@ -116,8 +118,10 @@ NOTE: You must be signed in to submit a report, and to include images you must s
     const option = options[msg.content];
     await msg.delete();
     if (!option) {
+      ddog.increment(`support-invalid`)
       return;
     }
+    ddog.increment(`support: ${option.description}`)
   
     if (option.custom) {
       const out = await option.custom(msg);
