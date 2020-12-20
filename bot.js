@@ -63,7 +63,7 @@ const options = {
       message: () => `**This server is for Dank Memer BOT SUPPORT. We do not answer questions about the community server.**
       
       If you are trying to appeal a ban, just select the "support server" option from the appeals page at <https://dankmemer.lol/appeals>.
-      If it is a question about the server, as the staff team within the server.`,
+      If it is a question about the server, ask the staff team within the server.`,
     },
     '7': {
       description: 'Report someone for breaking rules.',
@@ -121,7 +121,8 @@ NOTE: You must be signed in to submit a report, and to include images you must s
       ddog.increment(`support-invalid`)
       return;
     }
-    ddog.increment(`support: ${option.description}`)
+    console.log(option)
+    ddog.increment(`support-${msg.content}`)
   
     if (option.custom) {
       const out = await option.custom(msg);
