@@ -87,7 +87,6 @@ NOTE: You must be signed in to submit a report, and to include images you must s
         } else {
           msg.member.addRole(config.pingRole, 'Help Desk role addition');
         }
-        msg.member.addRole(config.supportRole, 'needs supportive people in their life');
         const dmChannel = await bot.getDMChannel(msg.author.id);
         try {
           await dmChannel.createMessage(`I have **${hasRole ? 'removed' : 'given you'}** the update role. You will **${hasRole ? 'no longer get' : 'now get'}** a ping for updates.`);
