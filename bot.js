@@ -58,11 +58,16 @@ const options = {
     '10': {
       description: 'General Inquiries',
       custom: async (msg) => {
+        const hasRole = msg.member.roles.includes(config.supportRole)
         msg.member.addRole(config.supportRole, 'needs supportive people in their life');
         const dmChannel = await bot.getDMChannel(msg.author.id);
         try {
+          if (hasRole) {
+            await dmChannel.createMessage(`You already have access to <#${config.supportChannel}>`)
+          } else {
             await dmChannel.createMessage(`I have given you access to <#${config.supportChannel}>`);
-          } catch (e) {
+          }
+        } catch (e) {
           return `${msg.member.author} I have given you access to <#${config.supportChannel}>`;
         }
       }
