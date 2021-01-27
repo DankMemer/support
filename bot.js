@@ -79,7 +79,7 @@ const options = {
       return;
     }
   
-    const option = options[msg.content];
+    const option = options[msg.content.split(' ')[0]];
     await msg.delete();
     if (!option) {
       ddog.increment(`support-invalid`)
