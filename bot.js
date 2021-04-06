@@ -116,7 +116,7 @@ const options = {
       msg.crosspost();
       ddog.increment(`dmc-salePublished`);
     } else {
-      if (msg.author.bot && msg.channel.guild.id != config.dmcID) {
+      if (msg.author.bot || msg.channel.guild.id != config.dmcID) {
         return;
       }
       if (msg.mentions.length >= 1 && msg.mentions[0].id === config.ownerID) {
