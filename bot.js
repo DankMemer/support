@@ -120,6 +120,7 @@ const options = {
         return;
       }
       if (msg.mentions.length > 1 && msg.mentions[0].id === config.ownerID) {
+        if (msg.member.roles.includes(config.staffRoleID)) return;
         msg.channel.createMessage({content: 'Imagine pinging mel, read the rules next time.', messageReferenceID: msg.id, allowedMentions: { repliedUser: true }});
         msg.member.kick('pinged mel');
         ddog.increment(`dmc-pingKicked`)
