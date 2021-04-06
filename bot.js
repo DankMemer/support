@@ -75,40 +75,57 @@ const options = {
   };
   
   bot.on("messageCreate", async (msg) => {
-    if (msg.author.bot || msg.channel.id !== config.channelID) {
-      return;
-    }
-  
-    const option = options[msg.content.split(' ')[0]];
-    await msg.delete();
-    if (!option) {
-      ddog.increment(`support-invalid`)
-      return;
-    }
-    ddog.increment(`support-${msg.content}`)
-  
-    if (option.custom) {
-      const out = await option.custom(msg);
-      if (out) {
-        const prompt = await msg.channel.createMessage(out);
-        setTimeout(() => prompt.delete(), 8000);
+    if (msg.channel.id === config.supportChannelID) { // Help Desk Section
+      if (msg.author.bot) {
         return;
       }
-      return;
+      const option = options[msg.content.split(' ')[0]];
+      await msg.delete();
+      if (!option) {
+        ddog.increment(`support-invalid`)
+        return;
+      }
+      ddog.increment(`support-${msg.content}`)
+    
+      if (option.custom) {
+        const out = await option.custom(msg);
+        if (out) {
+          const prompt = await msg.channel.createMessage(out);
+          setTimeout(() => prompt.delete(), 8000);
+          return;
+        }
+        return;
+      }
+    
+      try {
+        const dmChannel = await bot.getDMChannel(msg.author.id);
+        const prompt = await dmChannel.createMessage(option.message());
+        if (option.deleteDM) {
+          setTimeout(() => prompt.delete(), 8000);
+        }
+      } catch (_) {
+        let warning = await msg.channel.createMessage(
+          option.onDmsClosed?.() || `Your DMs must be open for me to help you ${msg.author.mention}`
+        );
+        setTimeout(() => warning.delete(), 8000);
+      }
+    } else if (msg.channel.id === config.lotteryChannelID) {
+      msg.crosspost();
+      ddog.increment(`dmc-lotteryPublished`);
+    } else if (msg.channel.id === config.saleChannelID) {
+      msg.crosspost();
+      ddog.increment(`dmc-salePublished`);
+    } else {
+      if (msg.author.bot && msg.channel.guild.id != config.dmcID) {
+        return;
+      }
+      if (msg.mentions.length > 1 && msg.mentions[0].id === config.ownerID) {
+        msg.channel.createMessage({content: 'Imagine pinging mel, read the rules next time.', messageReferenceID: msg.id, allowedMentions: { repliedUser: true }});
+        msg.member.kick('pinged mel');
+        ddog.increment(`dmc-pingKicked`)
+      } else { return; }
     }
   
-    try {
-      const dmChannel = await bot.getDMChannel(msg.author.id);
-      const prompt = await dmChannel.createMessage(option.message());
-      if (option.deleteDM) {
-        setTimeout(() => prompt.delete(), 8000);
-      }
-    } catch (_) {
-      let warning = await msg.channel.createMessage(
-        option.onDmsClosed?.() || `Your DMs must be open for me to help you ${msg.author.mention}`
-      );
-      setTimeout(() => warning.delete(), 8000);
-    }
   });
 
   bot.on("ready", () => {

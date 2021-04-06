@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/melmsie/support#readme",
   "dependencies": {
-    "eris": "^0.14.0",
+    "eris": "^0.15.0",
     "node-dogstatsd": "^0.0.7"
   }
 }
