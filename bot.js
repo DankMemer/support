@@ -68,7 +68,7 @@ const options = {
           await dmChannel.createMessage(`I have given you access to <#${config.supportChannel}>`);
         }
       } catch (_) {
-        return `${msg.member.author} I have given you access to <#${config.supportChannel}>`;
+        return `${msg.author.mention} I have given you access to <#${config.supportChannel}>`;
       }
     }
   },
