@@ -8,7 +8,7 @@ const ddog = new StatsD();
 const options = {
   '1': {
     description: 'Patreon/Lootbox issues or questions',
-    message: () => `**__Patreon Perks__**\n\nMake sure you have your Discord linked with your Patreon.\nIf you haven't, You can do that by going to the Apps section from your user settings:\n**<https://www.patreon.com/settings/apps>**\nAfter successfully doing so, you will have the donor roles.\n\nTo link with Dank Memer to get the bot perks, go to a place where you can run bot commands, and run \`pls link\`.\nThe process might take some time, So don't worry if it does. Once it is linked your pledge should appear at the bottom when you do pls profile.\n\n\`pls redeem\` and you'll be given your lootbox(es) - cooldown of 3 days.\n\`pls pserver add\` in the server where you want to add perks if your pledge is high enough.\n\n**__Lootboxes__**\n- If you purchased lootboxes, they will generally arrive within 5 minutes to your inventory (\`pls inventory\`).\n- If they aren't there after 48 hours, verify on our website that you were logged into the correct account.\n\n**If this still doesn't answer your question about Patreon or Lootboxes**\n\nPlease visit the FAQ on our website: **<https://dankmemer.lol/faq>**\nOr you can go back to the help-desk channel and select the last item on the list to talk to a moderator.`,
+    message: () => `**__Patreon Perks__**\n\nMake sure you have your Discord linked with your Patreon.\nIf you haven't, You can do that by going to the Apps section from your user settings:\n**<https://www.patreon.com/settings/apps>**\nAfter successfully doing so, you will have the donor roles.\n\nTo link with Dank Memer and get your bot perks, go to a place where you can run bot commands and run \`pls link\`. Go to the link it provides and log in to connect/link your account. ***You will need to do this once a month so that your perks are still available***, the process should be automatic and take only a few minutes of your time. If you upgraded your pledge and need to update your perks, you will need to re-link your account, you can do this by visiting **https://link.dankmemer.lol/** once again. You can see your tier at the bottom of your profile by running \`pls profile\`.\n\n\`pls redeem\` and you'll be given your lootbox(es) - cooldown of 3 days.\n\`pls pserver add\` in the server where you want to add perks if your pledge is high enough.\n\n**__Lootboxes__**\n- If you purchased lootboxes, they will generally arrive within 5 minutes to your inventory (\`pls inventory\`).\n- If they aren't there after 48 hours, verify on our website that you were logged into the correct account.\n\n**If this still doesn't answer your question about Patreon or Lootboxes**\n\nPlease visit the FAQ on our website: **<https://dankmemer.lol/faq>**\nOr you can go back to the help-desk channel and select the last item on the list to talk to a moderator.`,
   },
   '2': {
     description: 'Help with setting up the bot',
@@ -28,7 +28,7 @@ const options = {
   },
   '6': {
     description: 'Dank Memer Community Server',
-    message: () => `**This server is for Dank Memer BOT SUPPORT. We do not answer questions about the community server.**\n\n— If it is a question about the server, ask the staff team within the server.\n— If you are trying to appeal a server ban, just select the "support server" option from the appeals page at **<https://dankmemer.lol/appeals>**`,
+    message: () => `**This server is for Dank Memer BOT SUPPORT. We do not answer questions about the community server.**\n\n— If it is a question about the server, ask the staff team within the server.\n— If you are trying to appeal a server ban, just select the "Community Server Ban" option from the appeals page at **<https://dankmemer.lol/appeals>**`,
   },
   '7': {
     description: 'Report someone for breaking rules.',
@@ -117,7 +117,7 @@ bot.on("messageCreate", async (msg) => {
     ddog.increment(`dmc-salePublished`);
   } else if (msg.channel.id === config.prestigeChannelID) {
     if (!msg.content) {
-      return msg.delete()
+      return msg.delete();
     }
     const filter = msg.content.split(' ')[2] === 'Congratulations' && msg.author.id === '270904126974590976';
     if (!filter) {
