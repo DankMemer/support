@@ -129,7 +129,7 @@ bot.on("messageCreate", async (msg) => {
       return null;
     }
     if (msg.mentions.length >= 1 && msg.mentions[0].id === config.ownerID) {
-      if (msg.member.roles.includes(config.staffRoleID)) return null;
+      if (msg.member.roles.includes(config.staffRoleID) || msg.messageReference) return null;
       msg.channel.createMessage({
         content: 'Imagine pinging mel, read the rules next time.',
         messageReferenceID: msg.id,
