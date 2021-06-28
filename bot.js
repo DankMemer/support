@@ -110,53 +110,8 @@ bot.on("messageCreate", async (msg) => {
       );
       setTimeout(() => warning.delete(), 8000);
     }
-  } else if (msg.channel.id === config.lotteryChannelID) {
-    msg.crosspost();
-    ddog.increment(`dmc-lotteryPublished`);
-  } else if (msg.channel.id === config.saleChannelID) {
-    msg.crosspost();
-    ddog.increment(`dmc-salePublished`);
-  } else if (msg.channel.id === config.prestigeChannelID) {
-    if (!msg.content) {
-      return msg.delete();
-    }
-    const filter = msg.content.split(' ')[2] === 'Congratulations' && msg.author.id === '270904126974590976';
-    if (!filter) {
-      setTimeout(() => msg.delete(), 3000); // delete msgs after 3s so they see the confirmation prompt
-    }
-    return null;
   } else {
-    if (msg.author.bot || msg.channel.guild.id !== config.dmcID) {
-      return null;
-    }
-    if (msg.mentions.length >= 1 && msg.mentions[0].id === config.ownerID) {
-      if (msg.member.roles.includes(config.staffRoleID) || msg.messageReference) return null;
-      try {
-        const dmChannel = await bot.getDMChannel(msg.author.id);
-        const bufferOne = fs.readFileSync('./assets/banned.wav');
-        dmChannel.createMessage('You have been banned from Dank Memer Community for rule 3, no pinging developers.', { file: bufferOne, name: 'banned.wav' });
-      } catch (_) {}
-      const bufferTwo = fs.readFileSync('./assets/dumb.wav');
-      msg.channel.createMessage({
-        content: 'Please listen to the following audio.',
-        messageReferenceID: msg.id,
-        allowedMentions: {
-          repliedUser: true
-        }
-      }, {
-        file: bufferTwo,
-        name: 'idiot.wav'
-      });
-      bot.createMessage(config.modLog, `**${msg.author.username}#${msg.author.discriminator}** (\`${msg.author.id}\`) was banned for pinging Melmsie.`)
-      msg.member.ban(0, 'pinged mel')
-      ddog.increment(`dmc-pingKicked`)
-    } else if (msg.channel.id === config.dmcGeneralChannelID) {
-      if (msg.content.toLowerCase().startsWith('pls') && !msg.member.roles.includes(config.staffRoleID)) {
-        msg.delete();
-      }
-    } else {
-      return null;
-    }
+    return null;
   }
 });
 
