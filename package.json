@@ -1,23 +1,24 @@
 {
   "name": "support",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
   "main": "bot.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run": "node bot.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/melmsie/support.git"
+    "url": "git+https://github.com/DankMemer/support.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/melmsie/support/issues"
+    "url": "https://github.com/DankMemer/support/issues"
   },
-  "homepage": "https://github.com/melmsie/support#readme",
+  "homepage": "https://github.com/DankMemer/support#readme",
   "dependencies": {
-    "eris": "^0.15.0",
+    "eris": "^0.16.1",
     "node-dogstatsd": "^0.0.7"
   }
 }
