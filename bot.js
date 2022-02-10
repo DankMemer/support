@@ -30,7 +30,7 @@ bot.on('interactionCreate', async (interaction) => {
 			return interaction.createFollowup({
 				content:
 					option.onDmsClosed?.() ??
-					`Your DMs must be open for me to help you ${interaction.member.mention}`,
+					`Your DMs must be open for me to help you`,
 				flags: 64
 			});
 		}
@@ -49,11 +49,11 @@ bot.on('messageCreate', async (msg) => {
 		await bot.createMessage(config.helpDeskChannel, {
 			embeds: [
 				{
-					title: 'Dank Memer Support Help Desk',
+					title: 'Dank Memer Support | Help Desk',
 					description:
 						'Please choose an option from the select menu below if you need help.',
 					footer: {
-						text: 'If the interaction fails, please try again in a bit.',
+						text: 'If the interaction fails, try again in a bit.',
 						icon_url: msg.channel.guild.dynamicIconURL()
 					},
 					color: 0x2ecc71
@@ -66,7 +66,6 @@ bot.on('messageCreate', async (msg) => {
 						{
 							type: 3,
 							custom_id: 'support_options',
-							hash: '',
 							min_values: 0,
 							max_values: 1,
 							placeholder: 'Options',
