@@ -24,7 +24,7 @@ const options = {
 	bugs: {
 		description: 'Having an issue with Dank Memer, seems like a bug.',
 		message: () =>
-			`First, make sure whatever "bug" you are experiencing isn't an intended change posted in the last few posts of <#599044275291947016>. That channel contains all of our update notes. Second, you can visit Trello and see existing and fixed bugs https://trello.com/b/rjE7PbGZ/dank-memer\n\nIf it is not, please go back to the help-desk channel and select the last option to speak with a support staff member.`
+			`First, make sure whatever "bug" you are experiencing isn't an intended change posted in the last few posts of <#599044275291947016>. That channel and our community blogs (**https://dankmemer.lol/community/blogs**) contain all of our update notes.\n\nIf it is not, please go back to the help-desk channel and select the last option to speak with a support staff member.`
 	},
 	dmc: {
 		description: 'Dank Memer Community Server',
