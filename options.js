@@ -14,7 +14,7 @@ const options = {
 	bans: {
 		description: 'Bot ban, bot blacklist, or server ban questions',
 		message: () =>
-			`**To appeal any type of ban, you may visit our website**: **https://dankmemer.lol/appeals**\n(*Make sure you're logged in to be able to submit*)\n\nWe read all appeals within a week. If you have not heard back after that time period, it is likely denied. You are able to appeal again if you'd like.\nIf this doesn't answer your question, you can go back to the help-desk channel and select the last item on the list to talk to a moderator.\n\n**__Please Note__**: Moderators *don't* have access to your personal data on the bot, so they cannot see reasons for your ban. You either broke server rules, or bot rules listed at <https://dankmemer.lol/rules>`
+			`**To appeal any type of ban, you may visit our website**: **https://dankmemer.lol/appeals**\n(*Make sure you're logged in to be able to submit*)\n\nWe read all appeals within 2 weeks. If you have not heard back after that time period, it is likely denied. You are able to appeal again if you'd like.\nIf this doesn't answer your question, you can go back to the help-desk channel and select the last item on the menu to talk to a moderator.\n\n**__Please Note__**: Moderators *don't* have access to your personal data on the bot, so they cannot see reasons for your ban. You either broke server rules, or bot rules listed at https://dankmemer.lol/rules`
 	},
 	non_issues: {
 		description: 'Non-Issue related Dank Memer questions.',
@@ -24,17 +24,17 @@ const options = {
 	bugs: {
 		description: 'Having an issue with Dank Memer, seems like a bug.',
 		message: () =>
-			`First, make sure whatever "bug" you are experiencing isn't an intended change posted in the last few posts of <#599044275291947016>. That channel and our community blogs (**https://dankmemer.lol/community/blogs**) contain all of our update notes.\n\nIf it is not, please go back to the help-desk channel and select the last option to speak with a support staff member.`
+			`First, make sure whatever "bug" you are experiencing isn't an intended change posted in the last few messages of <#599044275291947016>. That channel and our community blogs (**https://dankmemer.lol/community/blogs**) contain all of our update notes.\n\nIf it is not, please go back to the help-desk channel and select the last option to speak with a support staff member.`
 	},
 	dmc: {
 		description: 'Dank Memer Community Server',
 		message: () =>
-			`**This server is for Dank Memer BOT SUPPORT. We do not answer questions about the community server.**\n\n— If it is a question about the server, ask the staff team within the server.\n— If you are trying to appeal a server ban, just select the "Community Server Ban" option from the appeals page at **<https://dankmemer.lol/appeals>**`
+			`**This server is for Dank Memer BOT SUPPORT. We do not answer questions about the community server.**\n\n— If it is a question about the server, ask the staff team within the server.\n— If you are trying to appeal a server ban, just select the "Community Server Ban" option from the appeals page at https://dankmemer.lol/appeals.`
 	},
 	reports: {
 		description: 'Report someone for breaking rules.',
 		message: () =>
-			`**To report someone for breaking our rules, please visit https://dankmemer.lol/reports**\n\nTo add proof for your report:\n— Upload it to any server or imgur\n— Copy the image link, and paste it in your report\n**Note: You'll need to log into website to submit the form.**\n\nFull list of rules: <https://dankmemer.lol/rules>`
+			`**To report someone for breaking our rules, please visit https://dankmemer.lol/reports**\n\nTo add proof for your report:\n— Upload it to any server or imgur\n— Copy the image link, and paste it in your report\n**Note: You'll need to log into website to submit the form.**\n\nFull list of rules: https://dankmemer.lol/rules`
 	},
 	update_messages: {
 		description: 'How to get updates messages in your server.',
