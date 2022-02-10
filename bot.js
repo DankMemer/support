@@ -86,49 +86,49 @@ bot.on('messageCreate', async (msg) => {
 									label: 'Bot bans, blacklists or server bans',
 									value: 'bans',
 									description:
-										'If you have questions regarding bot bans, blacklists or a server ban for one of our servers.'
+										'Questions regarding bot bans, blacklists or server bans.'
 								},
 								{
 									label: 'Non-issue related Dank Memer questions',
 									value: 'non_issues',
 									description:
-										"Select this if you have a question that's not necessarily an issue."
+										"If you have a question that's not necessarily an issue."
 								},
 								{
 									label: 'Bugs',
 									value: 'bugs',
 									description:
-										"Select this if you think you're experiencing a bug."
+										"If you think you're experiencing a bug."
 								},
 								{
 									label: 'Dank Memer Community Questions',
 									value: 'dmc',
 									description:
-										'Select this if you have a question about our official community server: Dank Memer Community.'
+										'If you have a question about Dank Memer Community.'
 								},
 								{
 									label: 'Bot Reports',
 									value: 'reports',
 									description:
-										'Select this if you want to report someone for breaking bot rules.'
+										'If you want to report someone for breaking bot rules.'
 								},
 								{
 									label: 'Get update messages in your server',
 									value: 'update_messages',
 									description:
-										'Select this if you want to know how to get updates in your server.'
+										'If you want to know how to get updates in your server.'
 								},
 								{
 									label: 'Get pings for updates',
 									value: 'update_role',
 									description:
-										'Select this if you would like the Bot Updates role.'
+										'If you would like the Bot Updates role.'
 								},
 								{
 									label: 'General Inquiries',
 									value: 'support_channel',
 									description:
-										"Select this if you have a general inquiry that isn't answered here."
+										"If you have a general inquiry that isn't answered here."
 								}
 							]
 						}
