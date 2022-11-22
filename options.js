@@ -4,7 +4,39 @@ const options = {
 	patreon: {
 		description: 'Patreon/Lootbox issues or questions',
 		message: () =>
-			`**__Patreon Perks__**\n\nMake sure you have your Discord linked with your Patreon.\nIf you haven't, You can do that by going to the Apps section from your user settings:\n**<https://www.patreon.com/settings/apps>**\nAfter successfully doing so, you will have the donor roles.\n\nTo link with Dank Memer and get your bot perks, go to a place where you can run bot commands and run \`pls link\`. Go to the link it provides and log in to connect/link your account. ***You will need to do this once a month so that your perks are still available***, the process should be automatic and take only a few minutes of your time. If you upgraded your pledge and need to update your perks, you will need to re-link your account, you can do this by visiting **https://link.dankmemer.lol/** once again. You can see your tier at the bottom of your profile by running \`pls profile\`.\n\n\`pls redeem\` and you'll be given your lootbox(es) - cooldown of 7 days.\n\`pls pserver add\` in the server where you want to add perks if your pledge is high enough.\n\n**__Lootboxes__**\n- If you want to purchase lootboxes please visit: **https://dankmemer.lol/lootboxes**\n- If you purchased lootboxes, they will generally arrive within 5 minutes to your inventory (\`pls inventory\`).\n- If they aren't there after 48 hours, verify on our website that you were logged into the correct account.\n\n**If this still doesn't answer your question about Patreon or Lootboxes**\n\nPlease visit the FAQ on our website: **<https://dankmemer.lol/faq>**\nOr you can go back to the help-desk channel and select the last item on the list to talk to a moderator.`
+			`__**Patreon Perks**__\n\n
+
+			To access your perks, make sure you’ve linked your Discord with your Patreon.\n\n
+			
+			To do this, log into your Patreon account and go to the Apps section from your user settings. If you have trouble finding the apps section, click the link below to go straight there.\n\n
+			
+			<https://www.patreon.com/settings/apps>\n\n
+			
+			Find Discord under “Third-party Apps” and click connect if you are not yet connected.\n\n
+			
+			After successfully doing so, you should have the premium roles.\n\n
+			
+			To link with Dank Memer and get your bot perks, run \`/donor status\` in Dank Memer’s DMs. If you’ve already linked your account, this command will show you information about your tier level and upcoming rewards. If you have not linked, you’ll see a link you can click to finish getting set up.\n\n
+			
+			***If you are on a monthly plan, you will need to relink once a month so that your perks are still available.*** The process should be quick and easy and only take a minute or two. \n\n
+			
+			__**Plan Upgrades**__\n\n
+			
+			If you upgrade your pledge, you will need to re-link your account to get the updated perks. You can relink by visiting:  <https://link.dankmemer.lol/>\n\n
+			
+			You can use \`/donor status\` at any time to check your current tier and to see when you’ll get your next lootbox(es). Rewards are automatically delivered each week and added to your inventory. If you have DM notifications enabled, you’ll receive a message when they’ve been delivered, and you can check \`/currencylog\` to see that they’ve been added.\n\n
+			
+			__**Premium Servers**__\n\n
+			
+			If your pledge is high enough, you can make a server premium to give users perks, such as access to the /weekly command and shorter cooldowns. To make a server premium, go to the server you want to add and run \`/donor premiumserver add\`.\n\n
+			
+			If you’ve left a server and want to remove your premium redemption, use /donor premiumserver list to find the server’s ID, and then go to any server with Dank Memer and use \`/donor premiumserver remove\`.\n\n
+			
+			**If this still doesn't answer your question about Patreon:**\n\n
+			
+			Please visit the FAQ on our website: <https://dankmemer.lol/faq>\n\n
+			
+			Or go back to the help-desk channel and select the last option to talk to the support staff.\n\n`
 	},
 	setting_up: {
 		description: 'Help with setting up the bot',
